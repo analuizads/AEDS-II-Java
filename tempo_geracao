@@ -1,0 +1,44 @@
+
+package ex1;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+	
+	public static double[] gerarAleatorio() {
+		
+		Random rnd = new Random();
+		
+		double vet[] = new double[1000000];
+		
+		for(int i = 0; i<vet.length; i++) {
+			
+			vet[i] = rnd.nextDouble();
+		}
+		return vet;
+	}
+	
+	public static void tempoGeracao() {
+		
+		long tempoInicial = System.currentTimeMillis(); 
+		
+		double vet[] = new double[1000000];
+		 
+		vet = gerarAleatorio( ); 
+		 
+		long tempoFinal = System.currentTimeMillis(); 
+		 
+		System.out.printf(" tempo total em segundos %.5f s\n", (tempoFinal - tempoInicial) / 
+		1000.0); 
+	}
+	
+	public static void main(String[] args) {
+		
+		double vet[] = new double[1000000];
+		vet = gerarAleatorio();
+		
+		tempoGeracao();
+	}
+
+}
